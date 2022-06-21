@@ -3,6 +3,11 @@
 ### [Project Page]() | [Real Data](https://www.dropbox.com/sh/23uvsue5we7e7b5/AAB4GSSWIaKiSouvN3wuWiwWa?dl=0) | [Paper](https://faculty.ucmerced.edu/mhyang/papers/iccv2021_video_matting.pdf)
 
 
+## Background
+
+1. Create virtual env: ```python3 -m venv crgnn```
+2. Activate virtual env: ```source crgnn/bin/activate```
+
 ## Installation
 Our code has been tested on Python 3.7, cuda 10.1 and PyTorch 1.4.0.
 
@@ -11,15 +16,10 @@ Our code has been tested on Python 3.7, cuda 10.1 and PyTorch 1.4.0.
 	cd models/archs/dcn
 	python setup.py develop
 
-
-    
-
-
 ## Inference
 Run the following command to do inference of CRGNN on the video matting dataset:
 
-    python test.py
-    
+    python3 test.py --data-root ./examples --checkpoint ./checkpoint/e20.pth
 
 ## Data
 1. Please see the real data in the above link.
