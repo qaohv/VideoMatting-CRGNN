@@ -4,37 +4,26 @@
 
 
 ## Background
-
-### Local env
-1. Create virtual env: ```python3 -m venv crgnn```
-2. Activate virtual env: ```source crgnn/bin/activate```
-
-### Docker env
-
 1. Run following command to build docker image:
 
 ```
-    docker build -t . crgnn
+docker build -t . crgnn
 ```
 
-## Installation
-Our code has been tested on Python 3.8, cuda 11.4 and PyTorch 1.10.0.
-
-	pip install -r requirements.txt
-	# install dcn
-	cd models/archs/dcn
-	python setup.py develop
+Code has been tested on Python 3.8, cuda 11.4 and PyTorch 1.10.0.
 
 ## Inference
 
-### Local env
-Run the following command to do inference of CRGNN on the video matting dataset:
+1. Run docker container using following command:
+```
+docker run -it --rm --gpus=all --ipc=host -v `pwd`/<data-folder>:/data crgnn bash
+```
 
-    python3 test.py --data-root ./examples --checkpoint ./checkpoint/e20.pth
+2. Run test.py script:
+```
+python3 test.py --data-root ./examples --checkpoint ./checkpoint/e20.pth
+```
 
-### Docker env
-
-    docker run -it --rm --gpus=all --ipc=host crgnn bash
 
 
 ## Data
