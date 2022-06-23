@@ -15,6 +15,6 @@ WORKDIR /opt/app
 COPY checkpoint /opt/app/checkpoint
 COPY models /opt/app/models
 COPY pretrained /opt/app/pretrained
-COPY crgnn_make_predictions.py /opt/app/
+COPY test.py /opt/app/
 
 RUN cd models/archs/dcn && python3 setup.py develop
